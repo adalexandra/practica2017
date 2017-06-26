@@ -1,0 +1,26 @@
+@model Practica2017.Models.ListOfBookViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Author</th>
+        </tr>
+
+        @for (int i=0;i<Model.ListOfBook.Count; i++)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model=>model.ListOfBook[i].id)</td>
+                <td>@Html.DisplayFor(model => model.ListOfBook[i].name)</td>
+                <td>@Html.DisplayFor(model => model.ListOfBook[i].author)</td>
+            </tr>
+        }
+    </table>
+</div>
